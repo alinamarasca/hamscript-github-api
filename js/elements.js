@@ -1,20 +1,23 @@
 import { showData } from './handlers.js';
 
 export const search = document.createElement('div');
-const header = document.createElement('h1');
-header.innerText = 'find user:'
+search.className = 'search';
 
 export const inputField = document.createElement('input');
 inputField.setAttribute('type', 'text');
+inputField.className = 'input';
+inputField.placeholder = 'find GitHub user'
+
 
 const button =  document.createElement('button');
 button.innerText = 'search';
 button.addEventListener('click', showData);
 
-search.append(header, inputField, button);
+search.append(inputField, button);
 
 
 export const result = document.createElement('div');
+result.className = "result";
 
 export const usersName = document.createElement('div');
 export const accCreated = document.createElement('div');

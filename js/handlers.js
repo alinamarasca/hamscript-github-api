@@ -15,16 +15,17 @@ export const showData = () => {
 
     fetchUsers(inputField.value).then((response) => {
     
-    usersName.innerHTML = `name: ${response.data.name}`;
+    usersName.innerHTML = `<span class='field'>name:</span> ${response.data.name}`;
 
     let date = new Date(response.data.created_at);
-    accCreated.innerHTML = `account created at: ${date.toLocaleDateString()}`;
+    accCreated.innerHTML = `<span class='field'>account created at:</span>  ${date.toLocaleDateString()}`;
 
-    pubRepos.innerHTML = `public repos: ${response.data.public_repos}`;
+    pubRepos.innerHTML = `<span class='field'>public repos:</span>  ${response.data.public_repos}`;
 
-    url.innerHTML = `github url: ${response.data.html_url}`;
+    url.innerHTML = `<span class='field'>github url:</span> <a href = ${response.data.html_url}> ${response.data.html_url}</a>`;
+    
 
-    location.innerHTML = `current location: ${response.data.location}`;
+    location.innerHTML = `<span class='field'>current location:</span> ${response.data.location}`;
     })
 
     inputField.value = '';
